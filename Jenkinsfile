@@ -66,10 +66,10 @@ if (buildCause._class ==~ /.+UpstreamCause/) {
     def buildUpstreamCause = currentBuild.getRawBuild().getCause(hudson.model.Cause.UpstreamCause)
 
     try {
-        buildPrincipal = [type:"Cerberus", name:buildUpstreamCause.getUpstreamCauses()[0].userId]
+        buildPrincipal = [type:"Upstream", name:buildUpstreamCause.getUpstreamCauses()[0].userId]
     } catch(Exception e) {
         echo 'The upstream build does not have UserId. It was triggered by the Timer.'
-        buildPrincipal = [type:"Cerberus", name:"Timer event"]
+        buildPrincipal = [type:"Upstream", name:"Timer event"]
     }
 }
 
@@ -328,9 +328,9 @@ pipeline {
             failCount = summary.failCount
             totalCount = summary.totalCount - summary.skipCount
             passRate = ((summary.passCount / totalCount) * 100).setScale(2, RoundingMode.FLOOR)
-            //Writing the variables value failCount, totlaCount and passRate in file summaryFile.txt
-            //to be displayed in cerberus slack message
-              writeFile(file: 'summaryFile.txt', text: totalCount + " " + failCount + " " + passRate)
+
+            //Writing the variables value failCount, totalCount and passRate in file summaryFile.txt
+            writeFile(file: 'summaryFile.txt', text: totalCount + " " + failCount + " " + passRate)
 
             archiveArtifacts artifacts: 'summaryFile.txt', fingerprint: true, onlyIfSuccessful: false
           }
@@ -346,15 +346,12 @@ pipeline {
                     buildNumberMessage +
                     startedByMessage +
                     "\n(<${env.BUILD_URL}|Link to aborted build>)"
-
-          if(buildPrincipal.type != "Cerberus") {
-            print "A slack message was ignored"
-            slackSend(
-              channel: params.slackChannels,
-              color: COLOR_MAP[currentBuild.currentResult],
-              message: abortedMessage
-            )
-          }
+          print "A slack message was ignored"
+          slackSend(
+                  channel: params.slackChannels,
+                  color: COLOR_MAP[currentBuild.currentResult],
+                  message: abortedMessage
+          )
         }
       }
     }
