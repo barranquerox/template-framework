@@ -1,0 +1,26 @@
+---
+version: '3.5'
+services:
+    zalenium:
+        image: "dosel/zalenium"
+        container_name: zalenium
+        hostname: zalenium
+        privileged: true
+        tty: true
+        volumes:
+            - ./build/extent/HtmlReport:/home/seluser/videos
+            - /var/run/docker.sock:/var/run/docker.sock
+        ports:
+            - 4444:4444
+        command: >
+          start --desiredContainers 1
+                --maxDockerSeleniumContainers 10
+                --screenWidth 1920 --screenHeight 1080
+                --timeZone "Europe/Paris"
+                --videoRecordingEnabled true
+                --sauceLabsEnabled false
+                --browserStackEnabled false
+                --testingBotEnabled false
+                --cbtEnabled false
+                --lambdaTestEnabled false
+                --startTunnel false

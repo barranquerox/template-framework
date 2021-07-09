@@ -1,0 +1,26 @@
+[
+  {
+    "email": "johnlennon@gmail.com",
+    "password": "Test123$",
+    "firstName": "John",
+    "lastName": "Lennon"
+  },
+  {
+    "email": "paulmccartney@gmail.com",
+    "password": "Test123$",
+    "firstName": "Paul",
+    "lastName": "McCartney"
+  },
+  {
+    "email": "ringostarr@gmail.com",
+    "password": "Test123$",
+    "firstName": "Ringo",
+    "lastName": "Starr"
+  },
+  {
+    "email": "georgeharrison@gmail.com",
+    "password": "Test123$",
+    "firstName": "George",
+    "lastName": "Harrison"
+  }
+]
