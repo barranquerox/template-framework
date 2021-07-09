@@ -4,6 +4,9 @@ import base.TestBase;
 import org.testng.annotations.Test;
 import pageobjects.pages.GoogleHomePage;
 
+/**
+ * Example of a test with google.
+ */
 @Test(groups = {"full-regression"})
 public class GoogleTests extends TestBase {
 
