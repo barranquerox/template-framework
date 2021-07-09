@@ -1,11 +1,13 @@
 package pageobjects.base;
 
 import driver.DriverBase;
+import errors.PageLoadingError;
 import java.time.Clock;
 import java.util.ArrayList;
 import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,6 +31,22 @@ public abstract class AbstractPageObject extends SlowLoadableComponent<AbstractP
 
   public AbstractPageObject(Clock clock, int timeOutInSeconds) {
     super(clock, timeOutInSeconds);
+  }
+
+  /**
+   * Logs and throws the exception caught when loading the component.
+   * @param customMessage The custom message to write in the log.
+   * @param e Exception caught when trying to load the component.
+   */
+  protected void throwNotLoadedException(String customMessage, @NotNull Exception e) {
+    throw new PageLoadingError(customMessage + "\n" + e.getMessage(), e.getCause());
+  }
+  /**
+   * Logs and throws the exception caught when loading the component.
+   * @param customMessage The custom message to write in the log.
+   */
+  protected void throwNotLoadedException(String customMessage) {
+    throw new PageLoadingError(customMessage);
   }
 
   /**
