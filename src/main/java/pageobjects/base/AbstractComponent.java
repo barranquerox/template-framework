@@ -3,6 +3,9 @@ package pageobjects.base;
 import java.time.Clock;
 import org.openqa.selenium.WebElement;
 
+/**
+ * Abstract Component.
+ */
 public abstract class AbstractComponent extends AbstractPageObject {
 
   protected static final int TIMEOUT_TO_LOAD_COMPONENT = 10;

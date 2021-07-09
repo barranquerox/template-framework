@@ -10,6 +10,9 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+/**
+ * Browser Type.
+ */
 public enum BrowserType implements DriverSetup {
 
   FIREFOX {

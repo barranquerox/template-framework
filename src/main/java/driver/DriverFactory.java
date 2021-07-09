@@ -11,6 +11,9 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+/**
+ * WebDriver Factory.
+ */
 public class DriverFactory {
 
   /**

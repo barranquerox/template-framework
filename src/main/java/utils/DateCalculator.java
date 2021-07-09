@@ -9,9 +9,10 @@ import java.time.temporal.WeekFields;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Date Calculator.
+ */
 public final class DateCalculator {
-
-  private static final int TF_PAY_HOUR = -2;
 
   private DateCalculator() {
   }
