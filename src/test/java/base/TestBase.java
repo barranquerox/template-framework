@@ -83,7 +83,7 @@ public class TestBase extends DriverBase {
 
     // only add the video if the selenium grid (Zalenium) was used
     // (in jenkins or with docker-compose)
-    if (!Strings.isNullOrEmpty(System.getProperty("gridURL")) && !result.isSuccess()) {
+    if (!Strings.isNullOrEmpty(System.getProperty("gridURL")) /*&& !result.isSuccess()*/) {
       // This function is not in TestReporter because we only use it at the end of the test
       // execution and only if the test was executed using Zalenium and it status is different than
       // SUCCESS
