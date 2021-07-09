@@ -20,4 +20,4 @@ cd template-framework
 ./gradlew test -Dbrowser=chrome
 ```
 
-This will execute all the tests using your local Chrome browser. For more information on the different command line options read [here](https://github.com/lafourchette/e2e-web-tests/wiki/Command-line-arguments).
+This will execute all the tests using your local Chrome browser.

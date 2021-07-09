@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,11 +16,6 @@ import org.openqa.selenium.support.ui.SlowLoadableComponent;
 import utils.TestReporter;
 
 public abstract class AbstractPageObject extends SlowLoadableComponent<AbstractPageObject> {
-
-  protected static By tfmSnackbarCloseButtonBy =
-      By.cssSelector("button[data-test='snackbar-close-button']");
-
-  public static final int ELEMENT_TIMEOUT = 30;
 
   /**
    * Logger.
