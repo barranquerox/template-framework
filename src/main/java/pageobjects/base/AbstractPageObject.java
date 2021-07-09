@@ -15,6 +15,9 @@ import org.openqa.selenium.interactions.Locatable;
 import org.openqa.selenium.support.ui.SlowLoadableComponent;
 import utils.TestReporter;
 
+/**
+ * Abstract Page Object.
+ */
 public abstract class AbstractPageObject extends SlowLoadableComponent<AbstractPageObject> {
 
   /**

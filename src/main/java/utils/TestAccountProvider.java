@@ -9,6 +9,9 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Test Account Provider.
+ */
 public final class TestAccountProvider {
   private static List<TestAccount> testAccountsList = new ArrayList<>();
   private static final SecureRandom random = new SecureRandom();

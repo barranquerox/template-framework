@@ -13,6 +13,9 @@ import org.apache.logging.log4j.Logger;
 import org.testng.util.Strings;
 import org.yaml.snakeyaml.Yaml;
 
+/**
+ * Environment Config.
+ */
 public final class EnvironmentConfig {
 
   /**

@@ -5,6 +5,9 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.Random;
 
+/**
+ * Random String Generator.
+ */
 public class RandomStringGenerator {
 
   public static final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

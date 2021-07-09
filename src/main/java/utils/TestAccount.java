@@ -3,6 +3,9 @@ package utils;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
+/**
+ * Test Account.
+ */
 public final class TestAccount {
   @JsonProperty ("email")
   private String email = "";
