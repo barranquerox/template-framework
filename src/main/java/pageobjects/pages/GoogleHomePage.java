@@ -5,7 +5,6 @@ import environment.EnvironmentConfig;
 import java.time.Duration;
 import java.time.Instant;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,6 +13,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobjects.base.AbstractPage;
 import utils.TestReporter;
 
+/**
+ * Google Home Page.
+ */
 public class GoogleHomePage extends AbstractPage {
   private final String googleBaseUrl;
 
@@ -28,6 +30,9 @@ public class GoogleHomePage extends AbstractPage {
   @FindBy(css = "span > div")
   private WebElement cookiesPopup;
 
+  /**
+   * Google Home Page Constructor.
+   */
   public GoogleHomePage() {
     logger.debug("Initialize Google Home Page");
     driver = DriverBase.getDriver();
@@ -36,7 +41,8 @@ public class GoogleHomePage extends AbstractPage {
   }
 
   /**
-   * Launches a search in the google home page
+   * Launches a search in the google home page.
+   *
    * @param query string to be searched
    */
   public void search(String query) {
@@ -47,6 +53,11 @@ public class GoogleHomePage extends AbstractPage {
     logger.debug("Clicked the search button");
   }
 
+  /**
+   * Accepts the cookies.
+   *
+   * @return the google home page
+   */
   public GoogleHomePage acceptCookies() {
     TestReporter.addInfoToReport("Accept the cookies");
     acceptCookiesButton.click();

@@ -35,14 +35,17 @@ public abstract class AbstractPageObject extends SlowLoadableComponent<AbstractP
 
   /**
    * Logs and throws the exception caught when loading the component.
+   *
    * @param customMessage The custom message to write in the log.
    * @param e Exception caught when trying to load the component.
    */
   protected void throwNotLoadedException(String customMessage, @NotNull Exception e) {
     throw new PageLoadingError(customMessage + "\n" + e.getMessage(), e.getCause());
   }
+
   /**
    * Logs and throws the exception caught when loading the component.
+   *
    * @param customMessage The custom message to write in the log.
    */
   protected void throwNotLoadedException(String customMessage) {
