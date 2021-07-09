@@ -11,8 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+* [#2] Take screenshots and recording in every test execution (passed, skipped or failed) - [@barranquerox].
 
 ### Fixed
+
+[#2]: https://github.com/barranquerox/template-framework/pull/2
 
 ## [0.1] - 2021-07-09
 
