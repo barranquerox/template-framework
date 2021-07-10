@@ -2,7 +2,7 @@ package google;
 
 import base.TestBase;
 import org.testng.annotations.Test;
-import pageobjects.pages.GoogleHomePage;
+import pageobjects.pages.google.HomePage;
 
 /**
  * Example of a test with google.
@@ -19,7 +19,7 @@ public class GoogleTests extends TestBase {
     // Arrange
     final String query = "Cheese";
 
-    GoogleHomePage googleHomePage = new GoogleHomePage();
+    HomePage googleHomePage = new HomePage();
     googleHomePage.get();
 
     googleHomePage.acceptCookies().search(query);

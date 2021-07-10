@@ -1,4 +1,4 @@
-package pageobjects.pages;
+package pageobjects.pages.google;
 
 import driver.DriverBase;
 import environment.EnvironmentConfig;
@@ -16,7 +16,7 @@ import utils.TestReporter;
 /**
  * Google Home Page.
  */
-public class GoogleHomePage extends AbstractPage {
+public class HomePage extends AbstractPage {
   private final String googleBaseUrl;
 
   @FindBy(name = "q")
@@ -33,11 +33,10 @@ public class GoogleHomePage extends AbstractPage {
   /**
    * Google Home Page Constructor.
    */
-  public GoogleHomePage() {
+  public HomePage() {
     logger.debug("Initialize Google Home Page");
     driver = DriverBase.getDriver();
     googleBaseUrl = EnvironmentConfig.getGoogleUrl();
-    PageFactory.initElements(driver, this);
   }
 
   /**
@@ -58,7 +57,7 @@ public class GoogleHomePage extends AbstractPage {
    *
    * @return the google home page
    */
-  public GoogleHomePage acceptCookies() {
+  public HomePage acceptCookies() {
     TestReporter.addInfoToReport("Accept the cookies");
     acceptCookiesButton.click();
     logger.debug("The accept cookies button was clicked.");
