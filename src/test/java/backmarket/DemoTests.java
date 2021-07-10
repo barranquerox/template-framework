@@ -13,10 +13,13 @@ public class DemoTests extends TestBase {
       retryAnalyzer = TestBase.RetryAnalyzer.class
   )
   public void demoBackMarketTest() {
-
     HomePage backMarketHomePage = new HomePage();
     backMarketHomePage.get();
 
-    backMarketHomePage.closeCookiePopup().signIn();
+    backMarketHomePage.closeCookiePopup()
+        .signIn()
+        .openHomePage()
+        .signIn()
+        .openShoppingCart();
   }
 }

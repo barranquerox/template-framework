@@ -4,7 +4,9 @@ import environment.EnvironmentConfig;
 import java.time.Duration;
 import java.time.Instant;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobjects.pages.backmarket.base.HeaderAndFooterPage;
 import utils.TestReporter;
 
@@ -15,23 +17,31 @@ public class HomePage extends HeaderAndFooterPage {
   private final By acceptCookieButtonBy = By.cssSelector("[data-qa='accept-cta']");
 
   /**
-   * Back Market Home Page Constructor.
+   * Home Page Constructor.
    */
   public HomePage() {
-    logger.debug("Initialize Back Market Home Page");
+    logger.debug("Initialize Home Page");
     baseUrl = EnvironmentConfig.getBackMarketUrl();
   }
 
   public HomePage closeCookiePopup() {
     TestReporter.addInfoToReport("Close cookie popup");
-    driver.findElement(acceptCookieButtonBy).click();
+
+    WebElement cookieButton = driver.findElement(acceptCookieButtonBy);
+    cookieButton.click();
+    logger.debug("The accept cookie button was clicked");
+
+    WebDriverWait wait = new WebDriverWait(driver, 2);
+    wait.until(ExpectedConditions.invisibilityOf(cookieButton));
+    logger.debug("The accept cookie button has disappeared");
+
     this.get();
     return this;
   }
 
   @Override
   protected void load() {
-    TestReporter.addInfoToReport("Load Back Market Home Page: " + baseUrl);
+    TestReporter.addInfoToReport("Load Home Page: " + baseUrl);
     driver.get(baseUrl);
   }
 
@@ -40,10 +50,9 @@ public class HomePage extends HeaderAndFooterPage {
     final Instant start = Instant.now();
     super.isLoaded();
 
-
     final Instant finish = Instant.now();
     final long timeElapsed = Duration.between(start, finish).toMillis();
-    TestReporter.addScreenshotToReport("The Back Market Home Page was loaded correctly in "
+    TestReporter.addScreenshotToReport("The Home Page was loaded correctly in "
         + timeElapsed + " milliseconds.");
   }
 }

@@ -6,6 +6,10 @@ import pageobjects.base.AbstractPage;
 import pageobjects.components.backmarket.Footer;
 import pageobjects.components.backmarket.Header;
 import pageobjects.pages.backmarket.HomePage;
+import pageobjects.pages.backmarket.QualityCenterPage;
+import pageobjects.pages.backmarket.RegisterPage;
+import pageobjects.pages.backmarket.ResellPage;
+import pageobjects.pages.backmarket.ShoppingCartPage;
 import utils.TestReporter;
 
 public class HeaderAndFooterPage extends AbstractPage {
@@ -18,10 +22,10 @@ public class HeaderAndFooterPage extends AbstractPage {
   private Footer footer;
 
   /**
-   * Back Market Header and Footer Page Constructor.
+   * Header and Footer Page Constructor.
    */
   public HeaderAndFooterPage() {
-    logger.debug("Initialize Back Market Header And Footer Page");
+    logger.debug("Initialize Header And Footer Page");
   }
 
   public void openCookiesInformationPage() {
@@ -29,24 +33,40 @@ public class HeaderAndFooterPage extends AbstractPage {
     footer.openCookiesLink();
   }
 
-  public void signIn() {
+  public RegisterPage signIn() {
     TestReporter.addInfoToReport("Sign in");
     header.signIn();
+
+    RegisterPage registerPage = new RegisterPage();
+    registerPage.get();
+    return registerPage;
   }
 
-  public void resell() {
+  public ResellPage resell() {
     TestReporter.addInfoToReport("Resell");
     header.resell();
+
+    ResellPage resellPage = new ResellPage();
+    resellPage.get();
+    return resellPage;
   }
 
-  public void openQualityCenter() {
+  public QualityCenterPage openQualityCenter() {
     TestReporter.addInfoToReport("Open quality center");
     header.openQualityCenter();
+
+    QualityCenterPage qualityCenterPage = new QualityCenterPage();
+    qualityCenterPage.get();
+    return qualityCenterPage;
   }
 
-  public void openShoppingCart() {
+  public ShoppingCartPage openShoppingCart() {
     TestReporter.addInfoToReport("Open shopping cart");
     header.openShoppingCart();
+
+    ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
+    shoppingCartPage.get();
+    return shoppingCartPage;
   }
 
   public HomePage openHomePage() {
@@ -58,8 +78,6 @@ public class HeaderAndFooterPage extends AbstractPage {
     return homePage;
   }
 
-
-
   @Override
   protected void isLoaded() {
     logger.debug("Start loading header and footer base page");
@@ -69,7 +87,7 @@ public class HeaderAndFooterPage extends AbstractPage {
       driver.findElement(footerContainerBy);
       logger.debug("The footer container is displayed");
     } catch (NoSuchElementException e) {
-      throwNotLoadedException("The Back Market page was not loaded correctly.", e);
+      throwNotLoadedException("The Header and Footer page was not loaded correctly.", e);
     }
 
     header = new Header(driver.findElement(headerContainerBy));
