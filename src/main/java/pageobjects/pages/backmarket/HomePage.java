@@ -34,8 +34,6 @@ public class HomePage extends HeaderAndFooterPage {
     WebDriverWait wait = new WebDriverWait(driver, 2);
     wait.until(ExpectedConditions.invisibilityOf(cookieButton));
     logger.debug("The accept cookie button has disappeared");
-
-    this.get();
     return this;
   }
 

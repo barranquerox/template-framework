@@ -16,8 +16,7 @@ public class DemoTests extends TestBase {
     HomePage backMarketHomePage = new HomePage();
     backMarketHomePage.get();
 
-    backMarketHomePage.closeCookiePopup()
-        .signIn()
+    backMarketHomePage.closeCookiePopup().signIn()
         .openHomePage()
         .signIn()
         .openShoppingCart();
