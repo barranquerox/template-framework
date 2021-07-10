@@ -79,7 +79,9 @@ public final class TestReporter {
     logger.debug(message);
     WebDriver webDriver = getDriver();
 
-    if (retryCount == MAX_RETRY_COUNT) {
+    // retryCount <= MAX_RETRY_COUNT  takes screenshots in every execution
+    // retryCount == MAX_RETRY_COUNT  takes screenshots only in the last retry
+    if (retryCount <= MAX_RETRY_COUNT) {
       logger.debug("Taking screenshot");
       File scrFile = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
       String projectPath = System.getProperty("user.dir");
