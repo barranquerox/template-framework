@@ -8,7 +8,8 @@ updates:
   - package-ecosystem: gradle
     directory: /
     schedule:
-      interval: "daily"
+
   - package-ecosystem: github-actions
     directory: /
-    schedule: "daily"
+    schedule:
+      interval: "daily"
