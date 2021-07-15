@@ -61,8 +61,8 @@ public class HomePage extends AbstractPage {
     acceptCookiesButton.click();
     logger.debug("The accept cookies button was clicked.");
 
-    final int COOKIE_TIMEOUT = 10;
-    WebDriverWait wait = new WebDriverWait(driver, COOKIE_TIMEOUT);
+    final int cookieTimeout = 10;
+    WebDriverWait wait = new WebDriverWait(driver, cookieTimeout);
     wait.until(ExpectedConditions.invisibilityOf(cookiesPopup));
     return this;
   }
