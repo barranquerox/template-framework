@@ -22,6 +22,6 @@ public class GoogleTests extends TestBase {
     HomePage googleHomePage = new HomePage();
     googleHomePage.get();
 
-    googleHomePage.acceptCookies().search(query);
+    googleHomePage.acceptCookies();
   }
 }
