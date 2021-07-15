@@ -12,6 +12,10 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Analyze on SonarCloud
+          command: gradle build sonarqube
+
       - run: docker network create grid
 
       # Download and cache dependencies
@@ -60,3 +64,9 @@ jobs:
           path: ~/project/build/extent
       - store_test_results:
           path: ~/project/build/reports/tests/test/junitreports
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
