@@ -10,6 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobjects.pages.backmarket.base.HeaderAndFooterPage;
 import utils.TestReporter;
 
+/**
+ * Back Market home page.
+ */
 public class HomePage extends HeaderAndFooterPage {
   private final String baseUrl;
 
@@ -24,6 +27,11 @@ public class HomePage extends HeaderAndFooterPage {
     baseUrl = EnvironmentConfig.getBackMarketUrl();
   }
 
+  /**
+   * Closes the cookie popup.
+   *
+   * @return The same home page.
+   */
   public HomePage closeCookiePopup() {
     TestReporter.addInfoToReport("Close cookie popup");
 

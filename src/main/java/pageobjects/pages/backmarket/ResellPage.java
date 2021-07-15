@@ -5,6 +5,9 @@ import java.time.Instant;
 import pageobjects.pages.backmarket.base.HeaderAndFooterPage;
 import utils.TestReporter;
 
+/**
+ * The resell page.
+ */
 public class ResellPage extends HeaderAndFooterPage {
 
   /**

@@ -5,6 +5,9 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import pageobjects.base.AbstractComponent;
 
+/**
+ * The header page component.
+ */
 public class Header extends AbstractComponent {
 
   // Selectors

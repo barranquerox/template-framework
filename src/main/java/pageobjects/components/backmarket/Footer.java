@@ -6,6 +6,9 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import pageobjects.base.AbstractComponent;
 
+/**
+ * The Footer page component.
+ */
 public class Footer extends AbstractComponent {
 
   private final By cookiesLinkBy = By.cssSelector("[name='Cookies']");

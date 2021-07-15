@@ -5,6 +5,9 @@ import java.time.Instant;
 import pageobjects.pages.backmarket.base.HeaderAndFooterPage;
 import utils.TestReporter;
 
+/**
+ * The quality center page.
+ */
 public class QualityCenterPage extends HeaderAndFooterPage {
 
   /**
