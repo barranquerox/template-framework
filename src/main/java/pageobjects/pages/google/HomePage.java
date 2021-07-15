@@ -60,7 +60,9 @@ public class HomePage extends AbstractPage {
     TestReporter.addInfoToReport("Accept the cookies");
     acceptCookiesButton.click();
     logger.debug("The accept cookies button was clicked.");
-    WebDriverWait wait = new WebDriverWait(driver, 10);
+
+    final int cookieTimeout = 10;
+    WebDriverWait wait = new WebDriverWait(driver, cookieTimeout);
     wait.until(ExpectedConditions.invisibilityOf(cookiesPopup));
     return this;
   }
