@@ -141,6 +141,10 @@ public final class EnvironmentConfig {
     return configMap.get("google").toString();
   }
 
+  public static String getBackMarketUrl() {
+    return configMap.get("backmarket").toString();
+  }
+
   public static String getTestingEnvironment() {
     return testingEnvironment;
   }

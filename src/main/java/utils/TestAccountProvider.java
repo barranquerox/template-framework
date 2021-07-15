@@ -44,10 +44,14 @@ public final class TestAccountProvider {
   public static TestAccount getRandomAccount() {
     logger.info("Selecting a random account from the list.");
     TestAccount account = testAccountsList.get(random.nextInt(testAccountsList.size()));
-    logger.debug("Test account email: {}", account.email());
-    logger.debug("Test account password: {}", account.password());
-    logger.debug("Test account first name: {}", account.firstName());
-    logger.debug("Test account last name: {}", account.lastName());
+    String email = account.email();
+    String password = account.password();
+    String firstName = account.firstName();
+    String lastName = account.lastName();
+    logger.debug("Test account email: {}", email);
+    logger.debug("Test account password: {}", password);
+    logger.debug("Test account first name: {}", firstName);
+    logger.debug("Test account last name: {}", lastName);
     return account;
   }
 }

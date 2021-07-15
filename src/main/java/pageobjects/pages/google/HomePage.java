@@ -1,4 +1,4 @@
-package pageobjects.pages;
+package pageobjects.pages.google;
 
 import driver.DriverBase;
 import environment.EnvironmentConfig;
@@ -7,7 +7,6 @@ import java.time.Instant;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobjects.base.AbstractPage;
@@ -16,7 +15,7 @@ import utils.TestReporter;
 /**
  * Google Home Page.
  */
-public class GoogleHomePage extends AbstractPage {
+public class HomePage extends AbstractPage {
   private final String googleBaseUrl;
 
   @FindBy(name = "q")
@@ -33,11 +32,10 @@ public class GoogleHomePage extends AbstractPage {
   /**
    * Google Home Page Constructor.
    */
-  public GoogleHomePage() {
+  public HomePage() {
     logger.debug("Initialize Google Home Page");
     driver = DriverBase.getDriver();
     googleBaseUrl = EnvironmentConfig.getGoogleUrl();
-    PageFactory.initElements(driver, this);
   }
 
   /**
@@ -58,11 +56,13 @@ public class GoogleHomePage extends AbstractPage {
    *
    * @return the google home page
    */
-  public GoogleHomePage acceptCookies() {
+  public HomePage acceptCookies() {
     TestReporter.addInfoToReport("Accept the cookies");
     acceptCookiesButton.click();
     logger.debug("The accept cookies button was clicked.");
-    WebDriverWait wait = new WebDriverWait(driver, 10);
+
+    final int cookieTimeout = 10;
+    WebDriverWait wait = new WebDriverWait(driver, cookieTimeout);
     wait.until(ExpectedConditions.invisibilityOf(cookiesPopup));
     return this;
   }
