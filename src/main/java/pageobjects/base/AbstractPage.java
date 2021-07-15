@@ -16,7 +16,7 @@ public abstract class AbstractPage extends AbstractPageObject {
   /**
    * Constructor.
    */
-  public AbstractPage() {
+  protected AbstractPage() {
     super(Clock.systemDefaultZone(), TIMEOUT_TO_LOAD_PAGE);
     driver = DriverBase.getDriver();
     PageFactory.initElements(driver, this);

@@ -2,7 +2,6 @@ package pageobjects.base;
 
 import java.time.Clock;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 
 /**
  * Abstract Component.
@@ -22,7 +21,7 @@ public abstract class AbstractComponent extends AbstractPageObject {
    *
    * @param container the WebElement that contains the whole component in the web page.
    */
-  public AbstractComponent(WebElement container) {
+  protected AbstractComponent(WebElement container) {
     super(Clock.systemDefaultZone(), TIMEOUT_TO_LOAD_COMPONENT);
     this.container = container;
   }

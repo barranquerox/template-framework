@@ -4,6 +4,9 @@ import base.TestBase;
 import org.testng.annotations.Test;
 import pageobjects.pages.backmarket.HomePage;
 
+/**
+ * Example of a back market test.
+ */
 @Test(groups = {"full-regression"})
 public class DemoTests extends TestBase {
 

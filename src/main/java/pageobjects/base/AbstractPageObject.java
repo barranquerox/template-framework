@@ -29,7 +29,7 @@ public abstract class AbstractPageObject extends SlowLoadableComponent<AbstractP
 
   private static final int TRANSITION_TIMEOUT_MILLISECONDS = 500;
 
-  public AbstractPageObject(Clock clock, int timeOutInSeconds) {
+  protected AbstractPageObject(Clock clock, int timeOutInSeconds) {
     super(clock, timeOutInSeconds);
   }
 
