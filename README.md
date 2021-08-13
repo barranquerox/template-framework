@@ -1,3 +1,16 @@
+[![CircleCI](https://circleci.com/gh/barranquerox/template-framework.svg?style=shield)](https://circleci.com/gh/barranquerox/template-framework)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=barranquerox_template-framework&metric=alert_status)](https://sonarcloud.io/dashboard?id=barranquerox_template-framework)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=barranquerox_template-framework&metric=bugs)](https://sonarcloud.io/dashboard?id=barranquerox_template-framework)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=barranquerox_template-framework&metric=code_smells)](https://sonarcloud.io/dashboard?id=barranquerox_template-framework)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=barranquerox_template-framework&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=barranquerox_template-framework)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=barranquerox_template-framework&metric=ncloc)](https://sonarcloud.io/dashboard?id=barranquerox_template-framework)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=barranquerox_template-framework&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=barranquerox_template-framework)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=barranquerox_template-framework&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=barranquerox_template-framework)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=barranquerox_template-framework&metric=security_rating)](https://sonarcloud.io/dashboard?id=barranquerox_template-framework)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=barranquerox_template-framework&metric=sqale_index)](https://sonarcloud.io/dashboard?id=barranquerox_template-framework)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=barranquerox_template-framework&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=barranquerox_template-framework)
+
+
 # TEMPLATE FRAMEWORK
 
 ## Description
