@@ -2,26 +2,18 @@
 #
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
-version: 2
-jobs:
-  build:
+version: 2.1
+executors:
+  machine-executor:
     machine:
       # specify the version you desire here
       image: ubuntu-2004:202104-01
 
+jobs:
+  build:
+    executor: machine-executor
     steps:
       - checkout
-
-      # Analyze on SonarCloud
-      - run:
-          name: Analyze on SonarCloud
-          command: gradle build sonarqube -x test
-
-      # Create Docker Network
-      - run:
-          name: Create Docker Network
-          command: |
-            docker network create grid
 
       # Download and cache dependencies
       - restore_cache:
@@ -34,12 +26,31 @@ jobs:
           name: Install gradle dependencies
           command: |
             java -version
-            gradle dependencies
+            ./gradlew dependencies
 
       - save_cache:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
+
+  sonarcloud:
+    executor: machine-executor
+    steps:
+      - checkout
+      - run:
+          name: Analyze on SonarCloud
+          command: ./gradlew build sonarqube -x test
+
+  test:
+    executor: machine-executor
+    steps:
+      - checkout
+
+      # Create Docker Network
+      - run:
+          name: Create Docker Network
+          command: |
+            docker network create grid
 
       # download latest chrome/firefox elgalu images
       - run:
@@ -66,7 +77,7 @@ jobs:
           name: Execute tests!
           command: |
             echo $IP_ZALENIUM
-            gradle test -DgridURL=http://$IP_ZALENIUM:4444/wd/hub
+            ./gradlew test -DgridURL=http://$IP_ZALENIUM:4444/wd/hub -Denvironment=prod -Ddomain=fr
 
       # Wait until all sessions are finished
       - run:
@@ -96,5 +107,11 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build:
+      - build
+      - sonarcloud:
           context: SonarCloud
+          requires:
+            - build
+      - test:
+          requires:
+            - build
