@@ -6,7 +6,6 @@ import pageobjects.base.AbstractPage;
 import pageobjects.components.backmarket.Footer;
 import pageobjects.components.backmarket.Header;
 import pageobjects.pages.backmarket.HomePage;
-import pageobjects.pages.backmarket.QualityCenterPage;
 import pageobjects.pages.backmarket.RegisterPage;
 import pageobjects.pages.backmarket.ResellPage;
 import pageobjects.pages.backmarket.ShoppingCartPage;
