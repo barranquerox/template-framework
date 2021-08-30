@@ -33,14 +33,6 @@ jobs:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
-  sonarcloud:
-    executor: machine-executor
-    steps:
-      - checkout
-      - run:
-          name: Analyze on SonarCloud
-          command: ./gradlew build sonarqube -x test
-
   test:
     executor: machine-executor
     steps:
@@ -108,10 +100,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - sonarcloud:
-          context: SonarCloud
-          requires:
-            - build
       - test:
           requires:
             - build
