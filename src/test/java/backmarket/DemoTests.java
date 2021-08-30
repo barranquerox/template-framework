@@ -22,6 +22,7 @@ public class DemoTests extends TestBase {
     backMarketHomePage.closeCookiePopup().signIn()
         .openHomePage()
         .signIn()
-        .openShoppingCart();
+        .openHomePage()
+        .signIn();
   }
 }

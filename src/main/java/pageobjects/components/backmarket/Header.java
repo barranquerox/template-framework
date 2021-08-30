@@ -13,10 +13,10 @@ public class Header extends AbstractComponent {
   // Selectors
   private final By homePageLinkBy = By.cssSelector("header a");
   private final By resellButtonBy = By.cssSelector("[data-test='topnav-buyback-link']");
-  private final By qualityButtonBy = By.cssSelector("[data-test='topnav-buyback-link'] + a");
-  private final By helpCenterButtonBy = By.cssSelector("[data-test='topnav-buyback-link'] + a + a");
-  private final By signInButtonBy = By.cssSelector("[data-test='user-icon-link']");
-  private final By shoppingCartBy = By.cssSelector("[data-test='user-icon-link'] + a");
+  private final By faqButtonBy = By.cssSelector("[data-test='topnav-buyback-link'] + a");
+  private final By signInButtonBy =
+      By.cssSelector("[data-test='search-bar-container'] + div a[aria-label]");
+  private final By shoppingCartBy = By.cssSelector("[data-test='search-bar-container'] + div + a");
 
 
   /**
@@ -38,9 +38,9 @@ public class Header extends AbstractComponent {
     container.findElement(resellButtonBy).click();
   }
 
-  public void openQualityCenter() {
-    logger.debug("Click the quality center button");
-    container.findElement(qualityButtonBy).click();
+  public void openFaq() {
+    logger.debug("Click the faq button");
+    container.findElement(faqButtonBy).click();
   }
 
   public void openShoppingCart() {
@@ -59,10 +59,8 @@ public class Header extends AbstractComponent {
     try {
       container.findElement(resellButtonBy);
       logger.debug("The resell button is displayed");
-      container.findElement(qualityButtonBy);
-      logger.debug("The quality button is displayed");
-      container.findElement(helpCenterButtonBy);
-      logger.debug("The help center button is displayed");
+      container.findElement(faqButtonBy);
+      logger.debug("The faq button is displayed");
       container.findElement(signInButtonBy);
       logger.debug("The sign in button is displayed");
       container.findElement(shoppingCartBy);

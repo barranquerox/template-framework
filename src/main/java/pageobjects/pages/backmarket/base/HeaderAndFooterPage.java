@@ -68,20 +68,6 @@ public class HeaderAndFooterPage extends AbstractPage {
   }
 
   /**
-   * Opens quality center page.
-   *
-   * @return The quality center page.
-   */
-  public QualityCenterPage openQualityCenter() {
-    TestReporter.addInfoToReport("Open quality center");
-    header.openQualityCenter();
-
-    QualityCenterPage qualityCenterPage = new QualityCenterPage();
-    qualityCenterPage.get();
-    return qualityCenterPage;
-  }
-
-  /**
    * Opens the shopping cart page.
    *
    * @return The shopping cart page.

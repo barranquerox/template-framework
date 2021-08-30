@@ -34,14 +34,16 @@ public class HomePage extends HeaderAndFooterPage {
    */
   public HomePage closeCookiePopup() {
     TestReporter.addInfoToReport("Close cookie popup");
+    final int cookieTimeout = 5;
 
-    WebElement cookieButton = driver.findElement(acceptCookieButtonBy);
+    WebDriverWait wait = new WebDriverWait(driver, cookieTimeout);
+
+    WebElement cookieButton =
+        wait.until(ExpectedConditions.visibilityOfElementLocated(acceptCookieButtonBy));
     cookieButton.click();
     logger.debug("The accept cookie button was clicked");
 
-    final int cookieTimeout = 2;
 
-    WebDriverWait wait = new WebDriverWait(driver, cookieTimeout);
     wait.until(ExpectedConditions.invisibilityOf(cookieButton));
     logger.debug("The accept cookie button has disappeared");
     return this;
